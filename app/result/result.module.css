@@ -1,0 +1,415 @@
+/* =========================================================
+   WINK — FINAL MISSION RESULT SCREEN (SPACE THEME)
+   ========================================================= */
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--space-bg, #071321);
+  color: var(--moon-cream, #fdf4e5);
+  font-family: var(--font-body, Inter, sans-serif);
+  padding: 32px 24px 48px;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.gameFrame {
+  width: min(92%, 1060px);
+  margin: auto 0;
+  background: linear-gradient(145deg, rgba(16, 36, 58, 0.92) 0%, rgba(10, 24, 40, 0.96) 100%);
+  border: 1px solid var(--space-border, rgba(85, 184, 255, 0.22));
+  border-radius: var(--radius-xl, 28px);
+  padding: clamp(28px, 3.2vw, 42px) clamp(28px, 4vw, 50px);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(85, 184, 255, 0.15);
+  margin-bottom: 32px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 184, 255, 0.1);
+  border: 1px solid rgba(85, 184, 255, 0.25);
+  color: var(--moon-cream, #fdf4e5);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back:hover {
+  background: rgba(255, 201, 74, 0.15);
+  border-color: rgba(255, 201, 74, 0.4);
+  color: var(--stellar-gold, #ffc94a);
+  transform: translateX(-3px);
+}
+
+.logo {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 0 16px rgba(85, 184, 255, 0.5);
+}
+
+.headerStar {
+  color: var(--stellar-gold, #ffc94a);
+  font-size: 20px;
+  text-shadow: 0 0 10px rgba(255, 201, 74, 0.8);
+  animation: twinkleStar 3s ease infinite;
+}
+
+/* =========================================================
+   HERO / MISSION COMPLETE
+   ========================================================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.complete {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: var(--stellar-gold, #ffc94a);
+  background: rgba(255, 201, 74, 0.12);
+  border: 1px solid rgba(255, 201, 74, 0.3);
+  padding: 6px 18px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  box-shadow: 0 0 16px rgba(255, 201, 74, 0.15);
+}
+
+.hero h1 {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: clamp(28px, 3.5vw, 44px);
+  color: #ffffff;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.subject {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--cosmic-blue, #55b8ff);
+  text-transform: uppercase;
+  margin: 0 0 28px;
+}
+
+/* =========================================================
+   ACCURACY GAUGE RING
+   ========================================================= */
+
+.accuracyWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.accuracyRing {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #ffc94a var(--progress, 280deg),
+    rgba(85, 184, 255, 0.15) 0deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255, 201, 74, 0.3);
+  padding: 8px;
+  transition: all 0.5s ease;
+}
+
+.accuracyInner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #091728;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(85, 184, 255, 0.2);
+}
+
+.accuracyInner span {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.accuracyLabel {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--text-secondary, #a9bdd3);
+  margin: 0;
+}
+
+.xp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 20px;
+  color: var(--stellar-gold, #ffc94a);
+  background: rgba(255, 201, 74, 0.12);
+  border: 1px solid rgba(255, 201, 74, 0.35);
+  padding: 8px 24px;
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(255, 201, 74, 0.25);
+}
+
+/* =========================================================
+   KEY STATS (CORRECT / WRONG / TIME)
+   ========================================================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.statCard {
+  background: var(--space-card-trans, rgba(21, 43, 66, 0.85));
+  border: 1px solid var(--space-border, rgba(85, 184, 255, 0.2));
+  border-radius: var(--radius-lg, 20px);
+  padding: 22px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(85, 184, 255, 0.4);
+}
+
+.statCard strong {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 28px;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.statCard:nth-child(1) strong {
+  color: #2ed573;
+}
+
+.statCard:nth-child(2) strong {
+  color: #ff5e7e;
+}
+
+.statCard:nth-child(3) strong {
+  color: var(--cosmic-blue, #55b8ff);
+}
+
+.statCard span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary, #a9bdd3);
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   PERFORMANCE BREAKDOWN
+   ========================================================= */
+
+.performance {
+  background: rgba(7, 19, 33, 0.6);
+  border: 1px solid rgba(85, 184, 255, 0.18);
+  border-radius: var(--radius-lg, 20px);
+  padding: 26px 30px;
+  margin-bottom: 36px;
+}
+
+.performance h2 {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+.difficultyRow {
+  display: grid;
+  grid-template-columns: 80px 1fr 60px;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.difficultyRow:last-child {
+  margin-bottom: 0;
+}
+
+.difficultyName {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary, #a9bdd3);
+}
+
+.progressTrack {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #55b8ff, #ffc94a);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: right;
+  font-family: monospace;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.reviewButton {
+  width: 100%;
+  max-width: 440px;
+  background: var(--stellar-gold, #ffc94a);
+  color: var(--space-bg, #071321);
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(255, 201, 74, 0.35);
+  transition: all 0.25s ease;
+}
+
+.reviewButton:hover {
+  background: #ffd978;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(255, 201, 74, 0.55);
+}
+
+.secondaryActions {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.secondaryButton {
+  flex: 1;
+  background: rgba(16, 36, 58, 0.8);
+  border: 1px solid rgba(85, 184, 255, 0.25);
+  color: var(--moon-cream, #fdf4e5);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.secondaryButton:hover {
+  background: rgba(21, 43, 66, 0.95);
+  border-color: rgba(255, 201, 74, 0.4);
+  color: var(--stellar-gold, #ffc94a);
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   DECORATIVE STARS
+   ========================================================= */
+
+.starOne, .starTwo, .starThree, .starFour {
+  position: absolute;
+  pointer-events: none;
+  color: var(--stellar-gold, #ffc94a);
+  text-shadow: 0 0 10px rgba(255, 201, 74, 0.7);
+  animation: twinkleStar 3s ease infinite;
+}
+
+.starOne { top: 10%; left: 5%; font-size: 16px; animation-delay: 0.3s; }
+.starTwo { top: 30%; right: 6%; font-size: 20px; animation-delay: 1.1s; }
+.starThree { bottom: 20%; left: 7%; font-size: 14px; animation-delay: 1.8s; }
+.starFour { bottom: 12%; right: 8%; font-size: 16px; animation-delay: 0.6s; }
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .gameFrame {
+    padding: 26px 20px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .secondaryActions {
+    flex-direction: column;
+  }
+}

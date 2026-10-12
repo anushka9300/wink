@@ -1,0 +1,208 @@
+/* =========================================================
+   WINK — ABOUT / MISSION BRIEFING SCREEN
+   ========================================================= */
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background: var(--space-bg, #071321);
+  color: var(--moon-cream, #fdf4e5);
+  font-family: var(--font-body, Inter, sans-serif);
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+  position: relative;
+  z-index: 5;
+}
+
+/* =========================================================
+   HERO BRIEFING
+   ========================================================= */
+
+.hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.overline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--stellar-gold, #ffc94a);
+  font-weight: 800;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  background: rgba(255, 201, 74, 0.12);
+  border: 1px solid rgba(255, 201, 74, 0.3);
+  padding: 6px 18px;
+  border-radius: 999px;
+  box-shadow: 0 0 16px rgba(255, 201, 74, 0.15);
+}
+
+.hero h1 {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: clamp(34px, 4.2vw, 54px);
+  margin: 0 0 16px;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+  color: var(--stellar-gold, #ffc94a);
+  text-shadow: 0 0 25px rgba(255, 201, 74, 0.4);
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--text-secondary, #a9bdd3);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   FEATURE MATRIX GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--space-card-trans, rgba(21, 43, 66, 0.85));
+  border: 1px solid var(--space-border, rgba(85, 184, 255, 0.18));
+  border-radius: var(--radius-xl, 24px);
+  padding: 32px 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 201, 74, 0.4);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.45), 0 0 24px rgba(85, 184, 255, 0.18);
+}
+
+.cardIconPill {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(85, 184, 255, 0.12);
+  border: 1px solid rgba(85, 184, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cosmic-blue, #55b8ff);
+  margin-bottom: 20px;
+  transition: all 0.2s ease;
+}
+
+.card:hover .cardIconPill {
+  background: rgba(255, 201, 74, 0.15);
+  border-color: rgba(255, 201, 74, 0.4);
+  color: var(--stellar-gold, #ffc94a);
+}
+
+.card h3 {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-secondary, #a9bdd3);
+}
+
+/* =========================================================
+   LORE / PHILOSOPHY BANNER
+   ========================================================= */
+
+.loreBanner {
+  background: linear-gradient(135deg, rgba(16, 36, 58, 0.9) 0%, rgba(21, 43, 66, 0.75) 100%);
+  border: 1px solid rgba(255, 201, 74, 0.3);
+  border-radius: var(--radius-xl, 24px);
+  padding: 36px 40px;
+  margin-bottom: 48px;
+  text-align: center;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4), 0 0 25px rgba(255, 201, 74, 0.12);
+}
+
+.loreTagline {
+  font-family: var(--font-display, "Fredoka One:Regular", Fredoka, sans-serif);
+  font-size: 28px;
+  color: var(--stellar-gold, #ffc94a);
+  margin: 0 0 8px;
+  letter-spacing: 0.1em;
+}
+
+.loreDesc {
+  font-size: 15px;
+  color: var(--moon-cream, #fdf4e5);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CALL TO ACTION
+   ========================================================= */
+
+.cta {
+  text-align: center;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--stellar-gold, #ffc94a);
+  color: var(--space-bg, #071321);
+  padding: 16px 38px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 6px 22px rgba(255, 201, 74, 0.35);
+  transition: all 0.25s ease;
+}
+
+.primaryBtn:hover {
+  background: #ffd978;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(255, 201, 74, 0.55);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .loreBanner {
+    padding: 24px 20px;
+  }
+
+  .primaryBtn {
+    width: 100%;
+  }
+}
